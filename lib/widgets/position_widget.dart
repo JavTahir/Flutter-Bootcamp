@@ -15,24 +15,19 @@ class PositionWidget extends StatelessWidget {
             color: Colors.grey,
             child: Stack(
               children: <Widget>[
-                Positioned(
-                  left: 20,
-                  bottom: 200,
-                  child: Container(
-                    width: 200,
-                    height: 200,
-                    color: Colors.red,
-                  ),
+                Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.red,
                 ),
                 Positioned(
-                  bottom: 0,
-                  right: 0,
+                  bottom: 50,
                   child: Container(
                     width: 100,
                     height: 100,
                     color: Colors.blue,
                   ),
-                )
+                ),
               ],
             ),
           ),

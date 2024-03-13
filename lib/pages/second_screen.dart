@@ -10,7 +10,6 @@ class SecondScreen extends StatelessWidget {
       body: Center(
         child: Text('Hello, World!'),
       ),
-      drawer: Drawer(),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+///////////////////////////////using CircleAvatar and Alignment widget////////////////////////////////
+
 class AvatarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,11 +13,9 @@ class AvatarWidget extends StatelessWidget {
             style: TextStyle(fontFamily: 'FontMain'),
           ), //use of customfonts as well
         ),
-        body: Center(
-          child: Container(
-            width: 130,
-            height: 130,
-          ),
+        body: CircleAvatar(
+          radius: 50,
+          backgroundImage: AssetImage("assets/images/logo.jpg"),
         ),
         drawer: Drawer(),
       ),
