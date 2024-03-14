@@ -36,6 +36,6 @@ If you have ideas for new features or improvements, we encourage you to open an 
 
 ## Licensing
 
-By contributing to this project, you agree that your contributions will be licensed under the project's open-source license (if applicable). See the [LICENSE](LICENSE) file for details.
+By contributing to this project, you agree that your contributions will be licensed under the project's open-source license (if applicable). See the [LICENSE](LICENSE.md) file for details.
 
 Thank you for contributing to [Flutter-Bootcamp](README.md) and for being a part of the community! :heart:
