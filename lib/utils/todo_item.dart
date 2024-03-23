@@ -11,11 +11,12 @@ class ToDoItem extends StatelessWidget {
   /*then after initializing set these as a parameter in constructor as shown below,so that whenever
   the constructor is called the values required are passed to constructor and are set in widget where
   required*/
-  ToDoItem(
-      {super.key,
-      required this.taskName,
-      required this.taskCompleted,
-      required this.onChanged});
+  ToDoItem({
+    super.key,
+    required this.taskName,
+    required this.taskCompleted,
+    required this.onChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,10 @@ class ToDoItem extends StatelessWidget {
           children: [
             Checkbox(value: taskCompleted, onChanged: onChanged),
             //taskname
-            Text(taskName)
+            Text(taskName),
+            SizedBox(
+              width: 120.0,
+            ),
           ],
         ),
         decoration: BoxDecoration(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/utils/dialog_box.dart';
 import 'package:flutter_project/utils/todo_item.dart';
 
 /*todo page is a stateful widget as everytime an item is added on this page resulting
@@ -20,6 +21,8 @@ class _ToDoPageState extends State<ToDoPage> {
     ["Do Exercise", false]
   ];
 
+  final _controller = TextEditingController();
+
   /*this is the function which is called on onChange to set the value of checkbox
   either true or false
   setState: is used everytime when we want the change to be refleced on Screen.It rebuilds the widget again
@@ -28,6 +31,27 @@ class _ToDoPageState extends State<ToDoPage> {
     setState(() {
       toDoList[index][1] = !toDoList[index][1];
     });
+  }
+
+  //save new task
+  void saveNewTask() {
+    setState(() {
+      toDoList.add([_controller.text, false]);
+      _controller.clear();
+    });
+    Navigator.of(context).pop();
+  }
+
+  //create new task
+  void createNewTask() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return DialogBox(
+              controller: _controller,
+              onSave: saveNewTask,
+              onCancel: () => Navigator.of(context).pop());
+        });
   }
 
   @override
@@ -40,6 +64,11 @@ class _ToDoPageState extends State<ToDoPage> {
         title: Center(
           child: Text("TO DO"),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: createNewTask,
+        child: Icon(Icons.add),
+        backgroundColor: theme.primaryColor,
       ),
 
       /*ListView.builder is when we have to dynamically create items not knowing their length.It just
